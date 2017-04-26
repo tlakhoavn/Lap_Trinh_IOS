@@ -10,6 +10,7 @@ import UIKit
 
 class ContentViewController: UIViewController {
     
+    /*
     class cThongTinBanAn{
         var maBan: Int
         
@@ -18,6 +19,7 @@ class ContentViewController: UIViewController {
         }
         
     }
+ */
     //MARK: *** Declare variables
     
     @IBOutlet weak var viewPhongAn: UIView!
@@ -29,10 +31,16 @@ class ContentViewController: UIViewController {
     var titlesText: String!
     var imagesFile: String!
     
-    var danhsachBanAn = [cThongTinBanAn](repeating: cThongTinBanAn(), count: 12)
+    //var danhsachBanAn = [cThongTinBanAn](repeating: cThongTinBanAn(), count: 0)
+    
+    
+    //SQLite
+    var dsBanAnMotTang:[ClassBanAn] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("so luong ban an\(dsBanAnMotTang.count)")
         
         // Do any additional setup after loading the view.
         //self.imageView.image = UIImage(named: imagesFile)
@@ -54,81 +62,98 @@ class ContentViewController: UIViewController {
     func hienThiDanhSachBanAn(){
         
         var arrButton = [UIButton]()
-        let index = (danhsachBanAn.count)
-        var topView = Int(self.view.frame.minY) + 65
         
-        
+        /*
         print("MinY \(self.view.frame.minY)")
         print("MaxY \(self.view.frame.maxY)")
         print("MinX \(self.view.frame.minX)")
         print("MaxX \(self.view.frame.maxX)")
         print("width \(self.view.frame.size.width)")
         print("height \(self.view.frame.size.height)")
+        */
         
         //Khai bao canh chinh le tu dong
-        let leftMargin:Float = 25.0
-        let rightMargin:Float = 25.0
-        let topMargin:Float = 65.0
-        let bottoMargin:Float = 10.0
+        let leftMargin:Float = 15.0
+        let rightMargin:Float = 15.0
+        let topMargin:Float = 35.0
+        //let bottoMargin:Float = 10.0
         let viewWidth = Float(self.view.frame.size.width)
-        let viewHeight = Float(self.view.frame.size.height)
-        let buttonWidth:Float = 75.0
-        let buttonHeight:Float = 75.0
-        let spaceBetweenButton:Float = 40.0    //Khoang cach giua 2 ban an
+        //let viewHeight = Float(self.view.frame.size.height)
+        
+        let buttonWidth:Float = 64.0
+        let buttonHeight:Float = 64.0
+        var spaceBetweenButton:Float = 0    //Khoang cach giua 2 ban an
         
         
         var xPos = leftMargin + 0
         var yPos = topMargin + 0
         
-        var i:Float = 0
         
-        for var element in  0...index-1 {
+        //Tinh va sap xep so luong button tren mot hang
+        let floorWidth = viewWidth - leftMargin - rightMargin
+        let numOfButtonPerRow = Int(floorWidth/(1.5*buttonWidth))
+        
+        spaceBetweenButton = ( floorWidth - Float(numOfButtonPerRow) * buttonWidth )/Float(numOfButtonPerRow - 1)
             
-            
-            if(xPos + buttonWidth > viewWidth - rightMargin){
-                xPos = leftMargin
-                yPos = yPos + buttonHeight + spaceBetweenButton
+        //print("So luong button tren hang la: \(numOfButtonPerRow)")
+        
+        let index = (dsBanAnMotTang.count)
+        var i = 0
+        if(index>0){
+            for var element in  0...index-1 {
+                i += 1
+                if(i <= numOfButtonPerRow){
+                    
+                }else {
+                    i = 1
+                    xPos = leftMargin
+                    yPos = yPos + buttonHeight + spaceBetweenButton
+                }
+                
+                
+                let button = UIButton(type: .custom)
+                button.titleLabel!.font = UIFont.systemFont(ofSize: 22)
+                button.titleLabel!.lineBreakMode = .byTruncatingTail
+                button.titleLabel!.textColor = UIColor.black
+                button.setTitleColor(UIColor.black, for: UIControlState.normal)
+                
+                
+                //var y:CGFloat  = (CGFloat)(j*90 + topView);
+                button.frame.size.height = CGFloat(buttonHeight)
+                button.frame.size.width = CGFloat(buttonWidth)
+                button.frame.origin.x = CGFloat(xPos)
+                button.frame.origin.y = CGFloat(yPos)
+                
+                if let image = UIImage(named: "BanTrong.png") {
+                    button.setBackgroundImage(image, for: .normal)
+                }else {
+                    button.backgroundColor = UIColor.green
+                }
+                
+                button.setTitle("\( dsBanAnMotTang[element].getSoBan() )", for: UIControlState.normal)
+                button.tag = dsBanAnMotTang[element].getSoBan()
+                
+                arrButton .insert(button, at: element)
+                
+                
+                xPos = xPos + (buttonWidth + spaceBetweenButton)
+                
             }
             
-            let button = UIButton(type: .custom)
-            button.titleLabel!.font = UIFont.systemFont(ofSize: 18)
-            button.titleLabel!.lineBreakMode = .byTruncatingTail
-            
-            
-            //var y:CGFloat  = (CGFloat)(j*90 + topView);
-            button.frame.size.height = CGFloat(buttonHeight)
-            button.frame.size.width = CGFloat(buttonWidth)
-            button.frame.origin.x = CGFloat(xPos)
-            button.frame.origin.y = CGFloat(yPos)
-            
-            if let image = UIImage(named: "BanTrong.png") {
-                button.setImage(image, for: .normal)
-            }else {
-                button.backgroundColor = UIColor.green
+            for var element in 0...index-1 {
+                
+                var button:UIButton = arrButton [element]
+                button.addTarget(self, action:#selector(clickButton), for: UIControlEvents.touchUpInside)
+                
+                self.view .addSubview(button)
             }
-            
-            button.setTitle("\(element+1)", for: UIControlState.normal)
-            button.tag = element
-            
-            arrButton .insert(button, at: element)
-            
-            
-            xPos = xPos + (buttonWidth + spaceBetweenButton)
-
         }
         
-        for var element in 0...index-1 {
-            
-            var button:UIButton = arrButton [element]
-            button.addTarget(self, action:#selector(clickButton), for: UIControlEvents.touchUpInside)
-            
-            self.view .addSubview(button)
-        }
         
     }
     
     func clickButton(_sender: UIButton){
-        var alertView = UIAlertView();
+        let alertView = UIAlertView();
         alertView.addButton(withTitle: "Done");
         alertView.title = "Alert!";
         alertView.message = "Button Pressed!!!";

@@ -7,3 +7,6 @@
 */
 "name"= "TEN";
 "Floor" = "Tầng";
+
+"MenuRoomFormatTitle" = "Bố trí";
+"MenuStatisticsTitle" = "Thống kê doanh thu";

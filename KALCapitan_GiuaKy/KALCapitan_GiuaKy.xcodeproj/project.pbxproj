@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550295931EB09A820080992C /* ClassBanAn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502958B1EB09A820080992C /* ClassBanAn.swift */; };
+		550295941EB09A820080992C /* ClassDanhSachMon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502958C1EB09A820080992C /* ClassDanhSachMon.swift */; };
+		550295951EB09A820080992C /* ClassDatBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502958D1EB09A820080992C /* ClassDatBan.swift */; };
+		550295961EB09A820080992C /* ClassKhuVuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502958E1EB09A820080992C /* ClassKhuVuc.swift */; };
+		550295971EB09A820080992C /* ClassMonAn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502958F1EB09A820080992C /* ClassMonAn.swift */; };
+		550295981EB09A820080992C /* ClassThongKeDanhThu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550295901EB09A820080992C /* ClassThongKeDanhThu.swift */; };
+		550295991EB09A820080992C /* QuanLyQuanAn.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 550295911EB09A820080992C /* QuanLyQuanAn.sqlite */; };
+		5502959A1EB09A820080992C /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550295921EB09A820080992C /* SQLite.swift */; };
+		5502959D1EB09AD60080992C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5502959C1EB09AD60080992C /* libsqlite3.tbd */; };
 		555981BB1EAFA19800B78F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555981BA1EAFA19800B78F01 /* AppDelegate.swift */; };
 		555981C01EAFA19800B78F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555981BE1EAFA19800B78F01 /* Main.storyboard */; };
 		555981C31EAFA19800B78F01 /* KALCapitan_GiuaKy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 555981C11EAFA19800B78F01 /* KALCapitan_GiuaKy.xcdatamodeld */; };
@@ -23,6 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5502958B1EB09A820080992C /* ClassBanAn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassBanAn.swift; path = ../ClassBanAn.swift; sourceTree = "<group>"; };
+		5502958C1EB09A820080992C /* ClassDanhSachMon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassDanhSachMon.swift; path = ../ClassDanhSachMon.swift; sourceTree = "<group>"; };
+		5502958D1EB09A820080992C /* ClassDatBan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassDatBan.swift; path = ../ClassDatBan.swift; sourceTree = "<group>"; };
+		5502958E1EB09A820080992C /* ClassKhuVuc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassKhuVuc.swift; path = ../ClassKhuVuc.swift; sourceTree = "<group>"; };
+		5502958F1EB09A820080992C /* ClassMonAn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassMonAn.swift; path = ../ClassMonAn.swift; sourceTree = "<group>"; };
+		550295901EB09A820080992C /* ClassThongKeDanhThu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassThongKeDanhThu.swift; path = ../ClassThongKeDanhThu.swift; sourceTree = "<group>"; };
+		550295911EB09A820080992C /* QuanLyQuanAn.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = QuanLyQuanAn.sqlite; path = ../QuanLyQuanAn.sqlite; sourceTree = "<group>"; };
+		550295921EB09A820080992C /* SQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLite.swift; path = ../SQLite.swift; sourceTree = "<group>"; };
+		5502959C1EB09AD60080992C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5502959E1EB09AF70080992C /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		555981B71EAFA19800B78F01 /* KALCapitan_GiuaKy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KALCapitan_GiuaKy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555981BA1EAFA19800B78F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		555981BF1EAFA19800B78F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,17 +68,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5502959D1EB09AD60080992C /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5502959B1EB09AD60080992C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5502959C1EB09AD60080992C /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		555981AE1EAFA19800B78F01 = {
 			isa = PBXGroup;
 			children = (
 				555981B91EAFA19800B78F01 /* KALCapitan_GiuaKy */,
 				555981B81EAFA19800B78F01 /* Products */,
+				5502959B1EB09AD60080992C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +111,7 @@
 				555981BA1EAFA19800B78F01 /* AppDelegate.swift */,
 				555981C91EAFA19800B78F01 /* Info.plist */,
 				555981C11EAFA19800B78F01 /* KALCapitan_GiuaKy.xcdatamodeld */,
+				5502959E1EB09AF70080992C /* Header.h */,
 			);
 			path = KALCapitan_GiuaKy;
 			sourceTree = "<group>";
@@ -105,6 +135,14 @@
 		555981D91EAFA31500B78F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5502958B1EB09A820080992C /* ClassBanAn.swift */,
+				5502958C1EB09A820080992C /* ClassDanhSachMon.swift */,
+				5502958D1EB09A820080992C /* ClassDatBan.swift */,
+				5502958E1EB09A820080992C /* ClassKhuVuc.swift */,
+				5502958F1EB09A820080992C /* ClassMonAn.swift */,
+				550295901EB09A820080992C /* ClassThongKeDanhThu.swift */,
+				550295911EB09A820080992C /* QuanLyQuanAn.sqlite */,
+				550295921EB09A820080992C /* SQLite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +251,7 @@
 				555981EB1EAFBD4800B78F01 /* BanTrong.png in Resources */,
 				555981E41EAFB40100B78F01 /* anhlau1.jpg in Resources */,
 				555981EA1EAFBD4800B78F01 /* BanDangDung.png in Resources */,
+				550295991EB09A820080992C /* QuanLyQuanAn.sqlite in Resources */,
 				555981D31EAFA20A00B78F01 /* Localizable.strings in Resources */,
 				555981C51EAFA19800B78F01 /* Assets.xcassets in Resources */,
 				555981C01EAFA19800B78F01 /* Main.storyboard in Resources */,
@@ -227,7 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550295981EB09A820080992C /* ClassThongKeDanhThu.swift in Sources */,
+				550295971EB09A820080992C /* ClassMonAn.swift in Sources */,
+				550295961EB09A820080992C /* ClassKhuVuc.swift in Sources */,
 				555981E01EAFAA1500B78F01 /* ContentViewController.swift in Sources */,
+				550295941EB09A820080992C /* ClassDanhSachMon.swift in Sources */,
+				550295951EB09A820080992C /* ClassDatBan.swift in Sources */,
+				550295931EB09A820080992C /* ClassBanAn.swift in Sources */,
+				5502959A1EB09A820080992C /* SQLite.swift in Sources */,
 				555981C31EAFA19800B78F01 /* KALCapitan_GiuaKy.xcdatamodeld in Sources */,
 				555981BB1EAFA19800B78F01 /* AppDelegate.swift in Sources */,
 				555981DD1EAFA36A00B78F01 /* mainViewController.swift in Sources */,
@@ -372,6 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AnhKhoa.KALCapitan-GiuaKy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = KALCapitan_GiuaKy/Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -384,6 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AnhKhoa.KALCapitan-GiuaKy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = KALCapitan_GiuaKy/Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -407,6 +455,7 @@
 				555981CE1EAFA19800B78F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
